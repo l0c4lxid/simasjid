@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class ModelDonasi extends Model
+{
+     public function AllData()
+     {
+          return $this->db->table('tbl_donasi')
+               ->get()->getResultArray();
+     }
+     public function AllDataTable()
+     {
+          return $this->db->table('tbl_donasi')
+               ->join('tbl_rekening', 'tbl_rekening.id_rek = tbl_donasi.id_rek', 'Left')
+               ->get()->getResultArray();
+     }
+     public function Masuk()
+     {
+          return $this->db->table('tbl_donasi')
+               ->join('tbl_rekening', 'tbl_rekening.id_rek = tbl_donasi.id_rek', 'Left')
+               ->where("status", "Masuk")
+               ->get()->getResultArray();
+     }
+     public function Keluar()
+     {
+          return $this->db->table('tbl_donasi')
+               ->join('tbl_rekening', 'tbl_rekening.id_rek = tbl_donasi.id_rek', 'Left')
+               ->where("status", "Keluar")
+               ->get()->getResultArray();
+     }
+     public function Pending()
+     {
+          return $this->db->table('tbl_donasi')
+               ->where("status", "Pending")
+               ->get()->getResultArray();
+     }
+     public function InsertData($data)
+     {
+          $this->db->table('tbl_donasi')->insert($data);
+     }
+     public function Updatedata($data)
+     {
+          $this->db->table('tbl_donasi')
+               ->where('id_donasi', $data['id_donasi'])
+               ->update($data);
+     }
+
+     public function HapusData($data)
+     {
+          $this->db->table('tbl_donasi')
+               ->where('id_donasi', $data['id_donasi'])
+               ->delete($data);
+     }
+//     public function GetDonasi()
+//     {
+//          $builder = $this->db->table('tbl_donasi');
+//          $builder -> join('tbl_rekening', 'tbl_rekenig.id_rek = tbl_donasi.id_rek' );
+//          $query = $builder->get();
+//          return $query->getResult();
+//     }
+
+}
