@@ -141,6 +141,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="<?= base_url('KasMasjid') ?>"
+                    class="nav-link <?= $submenu == 'rekap-kas' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon text-primary"></i>
+                    <p>Rekap Kas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="<?= base_url('KasMasjid/Masuk') ?>"
                     class="nav-link <?= $menu == 'kas-masuk' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon text-success"></i>
@@ -154,13 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Kas Keluar</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('KasMasjid') ?>"
-                    class="nav-link <?= $submenu == 'rekap-kas' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon text-primary"></i>
-                    <p>Rekap Kas</p>
-                  </a>
-                </li>
+
               </ul>
             </li>
             <li class="nav-item">
@@ -181,6 +182,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="<?= base_url('Admin/Donasi') ?>"
+                    class="nav-link <?= $submenu == 'rekap-kas' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon text-primary"></i>
+                    <p>Rekap Donasi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="<?= base_url('Admin/DonasiMasuk') ?>"
                     class="nav-link <?= $menu == 'donasi-masuk' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon text-success"></i>
@@ -194,13 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Donasi Keluar</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('Admin/Donasi') ?>"
-                    class="nav-link <?= $submenu == 'rekap-kas' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon text-primary"></i>
-                    <p>Rekap Donasi</p>
-                  </a>
-                </li>
+
               </ul>
             </li>
             <li class="nav-item">
