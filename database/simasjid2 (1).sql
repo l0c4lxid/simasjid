@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 27, 2023 at 08:06 AM
+-- Generation Time: Apr 19, 2023 at 01:14 PM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,14 @@ CREATE TABLE `tbl_agenda` (
   `jam` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `tbl_agenda`
+--
+
+INSERT INTO `tbl_agenda` (`id_agenda`, `nama_kegiatan`, `tanggal`, `jam`) VALUES
+(11, 'Pengajian Akbar', '2023-03-28', '20:00:00'),
+(12, 'sdfsdf', '2023-04-19', '19:54:00');
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +64,12 @@ CREATE TABLE `tbl_donasi` (
 --
 
 INSERT INTO `tbl_donasi` (`id_donasi`, `id_rek`, `nama_bank`, `no_rekening`, `an`, `jumlah`, `bukti`, `status`) VALUES
-(23, 5, 'BRI', '12312123', 'asdasd', 123213, '1679883713_4e09d9981c9a07318765.jpg', 'Keluar');
+(23, 5, 'BRI', '12312123', 'asdasd', 123213, '1679883713_4e09d9981c9a07318765.jpg', 'Masuk'),
+(24, 5, 'BRI', '123123', 'sdaads', 1212312, '1680588746_8ceaefea5a21405f7a68.png', 'Pending'),
+(25, 5, 'BRI', '12312', 'da', 123, '1680588820_0e6e61732d59fc0c8757.png', 'Pending'),
+(26, 5, 'BRI', '12312', 'adsd', 123, '1680588906_d54ba05ab9e304c7f2b6.png', 'Pending'),
+(27, 5, 'BRI', '123', 'asd', 123, '1680588951_d842c0b4a28cf9bf8dff.png', 'Pending'),
+(28, 5, 'BRI', '2312', 'weqw', 2312, '1680588999_fa6dfc542fd2c7aa2668.png', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -120,16 +133,16 @@ CREATE TABLE `tbl_pesan` (
   `nama_pesan` varchar(30) DEFAULT NULL,
   `wa_pesan` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `judul_pesan` varchar(128) DEFAULT NULL,
-  `isi_pesan` varchar(255) DEFAULT NULL
+  `isi_pesan` varchar(255) DEFAULT NULL,
+  `tanggal_kirim` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_pesan`
 --
 
-INSERT INTO `tbl_pesan` (`id_pesan`, `nama_pesan`, `wa_pesan`, `judul_pesan`, `isi_pesan`) VALUES
-(5, 'syaid andhika', '089607765169', 'Test', 'Donasi saya cek dong'),
-(6, 'asda', '2342', 'dads', 'asda');
+INSERT INTO `tbl_pesan` (`id_pesan`, `nama_pesan`, `wa_pesan`, `judul_pesan`, `isi_pesan`, `tanggal_kirim`) VALUES
+(10, 'sadas', '123123', 'sdadsa', 'asdadw', '2023-04-19 19:04:44');
 
 -- --------------------------------------------------------
 
@@ -163,16 +176,15 @@ CREATE TABLE `user` (
   `id_user` int NOT NULL,
   `nama_user` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `level` int DEFAULT NULL
+  `password` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `email`, `password`, `level`) VALUES
-(1, 'Syaid Andhika', 'admin@admin.com', '1', 0);
+INSERT INTO `user` (`id_user`, `nama_user`, `email`, `password`) VALUES
+(1, 'Syaid Andhika', 'admin@admin.com', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -228,13 +240,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tbl_agenda`
 --
 ALTER TABLE `tbl_agenda`
-  MODIFY `id_agenda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_agenda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_donasi`
 --
 ALTER TABLE `tbl_donasi`
-  MODIFY `id_donasi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_donasi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_kas_masjid`
@@ -252,7 +264,7 @@ ALTER TABLE `tbl_pengaturan`
 -- AUTO_INCREMENT for table `tbl_pesan`
 --
 ALTER TABLE `tbl_pesan`
-  MODIFY `id_pesan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pesan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_rekening`
