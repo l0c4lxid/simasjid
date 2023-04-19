@@ -48,7 +48,7 @@ class Login extends BaseController
 
             if ($CekLogin) {
                 session()->set('nama_user', $CekLogin['nama_user']);
-                session()->set('level', $CekLogin['level']);
+                // session()->set('level', $CekLogin['level']);
                 return redirect()->to(base_url('Admin'));
             } else {
                 session()->setFlashdata('gagal', 'Email / Password Salah !');
@@ -63,7 +63,7 @@ class Login extends BaseController
     public function LogOut()
     {
         session()->remove('nama_user');
-        session()->remove('level');
+        // session()->remove('level');
         session()->setFlashdata('pesan', 'Sudah Logout');
         return redirect()->to(base_url('Login'));
 

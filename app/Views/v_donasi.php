@@ -7,11 +7,22 @@
 
       <div class="card-tools">
       </div>
+
       <!-- /.card-tools -->
     </div>
+
+
     <!-- /.card-header -->
     <div class="card-body table-responsive">
-      <table class="table table-head-fixed text-nowrap">
+      <div class="input-group">
+        <input type="text" id="myInput" class="form-control" placeholder="Search...">
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <br>
+
+      <table class="table table-head-fixed text-nowrap" id="myTable">
         <tread>
           <tr>
             <th width='50px'>No.</th>
@@ -51,7 +62,7 @@
               <td class="text-left">Rp.
                 <?= number_format($value['jumlah']) ?>
               </td>
-              <td><img src="<?= base_url('bukti/' . $value['bukti']) ?>" width="450px"></td>
+              <td><img src="<?= base_url('bukti/' . $value['bukti']) ?>" width="200px"></td>
               <td>
                 <?= $value['status'] ?>
               </td>
@@ -108,3 +119,14 @@
 
   </div>
 <?php } ?>
+
+<script>
+  $(document).ready(function () {
+    $('#myInput').on('keyup', function () {
+      var value = $(this).val().toLowerCase();
+      $('#myTable tbody tr').filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>

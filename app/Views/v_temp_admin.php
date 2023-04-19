@@ -86,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('Login/LogOut') ?>">
+          <a class="nav-link" data-toggle="modal" data-target="#modal-logout">
             <i class="fas fa-sign-out-alt"></i>Log Out
           </a>
         </li>
@@ -99,13 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="<?= base_url('Admin') ?>" class="brand-link text-center">
         <i class="fas fa-mosque text-success fa-2x"></i>
-        <h2><b>SI Masjid</b></h2>
+        <br><b>Masjid</b>
       </a>
-      <a class="brand-link text-center text-success">
-        <h5><b>
-            <?= session()->get('nama_user') ?>
-          </b></h5>
-      </a>
+
 
       <!-- Sidebar -->
       <div class="sidebar">
@@ -296,3 +292,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   });
 </script>
+
+<div class="modal fade" id="modal-logout">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Log Out
+        </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah Ingin Keluar ?<br>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+        <a href="<?= base_url('Login/LogOut') ?>" class="btn btn-danger">Keluar</a>
+      </div>
+      <?php echo form_close() ?>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>

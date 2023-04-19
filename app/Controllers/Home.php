@@ -118,6 +118,7 @@ class Home extends BaseController
             'wa_pesan' => $this->request->getPost('wa_pesan'),
             'judul_pesan' => $this->request->getPost('judul_pesan'),
             'isi_pesan' => $this->request->getPost('isi_pesan'),
+            'tanggal_kirim' => date('Y-m-d H:i:s'),
         ];
         $this->ModelPesan->InsertDataPesan($data);
         session()->setFlashdata('pesan', 'Pesan Berhasil Dikirim !');
