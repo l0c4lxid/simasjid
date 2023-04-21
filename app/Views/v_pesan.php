@@ -15,8 +15,8 @@
 
 
         <!-- /.card-header -->
-        <div class="card-body table table-bordered">
-            <table id="myTable" class="table">
+        <div class="card-body table-responsive table table-bordered">
+            <table id="myTable" class="table table-head-fixed text-nowrap">
                 <!-- <table class="table table-bordered" id="example2"> -->
                 <tread>
                     <tr>

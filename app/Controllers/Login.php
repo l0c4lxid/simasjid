@@ -47,8 +47,8 @@ class Login extends BaseController
             $CekLogin = $this->ModelLogin->CekUser($email, $password);
 
             if ($CekLogin) {
-                session()->set('nama_user', $CekLogin['nama_user']);
-                // session()->set('level', $CekLogin['level']);
+                session()->set('email', $CekLogin['email']);
+                session()->set('password', $CekLogin['password']);
                 return redirect()->to(base_url('Admin'));
             } else {
                 session()->setFlashdata('gagal', 'Email / Password Salah !');
@@ -62,8 +62,8 @@ class Login extends BaseController
 
     public function LogOut()
     {
-        session()->remove('nama_user');
-        // session()->remove('level');
+        session()->remove('email');
+        session()->remove('password');
         session()->setFlashdata('pesan', 'Sudah Logout');
         return redirect()->to(base_url('Login'));
 

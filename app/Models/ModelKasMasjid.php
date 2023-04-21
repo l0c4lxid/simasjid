@@ -40,10 +40,11 @@ class ModelKasMasjid extends Model
                ->where('id_kas_masjid', $data['id_kas_masjid'])
                ->delete($data);
      }
-//     public function DataBulanan($bulan, $tahun) {
-//           return $this->db->table('tbl_kas_masjid')
-//              ->where("month(tanggal)", $bulan)
-//              ->where("year(tanggal)", $tahun)
-//              ->get()->getResultArray();
-//     }
+     public function DataBulanan($bulan, $tahun)
+     {
+          return $this->db->table('tbl_kas_masjid')
+               ->where("month(tanggal)", $bulan)
+               ->where("year(tanggal)", $tahun)
+               ->get()->getResultArray();
+     }
 }

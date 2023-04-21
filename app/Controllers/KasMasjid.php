@@ -4,12 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelKasMasjid;
+use App\Models\ModelAdmin;
 
 class KasMasjid extends BaseController
 {
     public function __construct()
     {
         $this->ModelKasMasjid = new ModelKasMasjid;
+        $this->ModelAdmin = new ModelAdmin;
     }
     public function index()
     {
@@ -119,20 +121,7 @@ class KasMasjid extends BaseController
         session()->setFlashdata('pesan', 'Berhasil Dihapus !');
         return redirect()->to(base_url('KasMasjid/Keluar'));
     }
-    public function ViewLaporan()
-    {
-        $bulan = $this->request->getPost('bulan');
-        $tahun = $this->request->getPost('tahun');
-        $data = [
-            'kas' => $this->ModelKasMasjid->AllData($bulan, $tahun),
-            'bulan' => $bulan,
-            'tahun' => $tahun
-        ];
-        $rensponse = [
-            'data' => view('v_rekap_kas_masjid', $data)
-        ];
-        echo json_encode($rensponse);
-    }
+
     public function Laporan()
     {
         $data = [
@@ -140,10 +129,45 @@ class KasMasjid extends BaseController
             'subjudul' => '',
             'menu' => 'laporan',
             'submenu' => '',
-            'page' => 'v_laporan',
+            'page' => 'laporan/v_template',
+            'masjid' => $this->ModelAdmin->ViewPengaturan(),
         ];
         return view('v_temp_admin', $data);
     }
+    public function ViewLaporan()
+    {
+        $bulan = $this->request->getPost('bulan');
+        $tahun = $this->request->getPost('tahun');
 
+        // Load the data from the model
+        $data = [
+            'kas' => $this->ModelKasMasjid->DataBulanan($bulan, $tahun),
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+        ];
+
+        // Render the view as a string and assign it to the 'data' key in the response array
+        $response = [
+            'data' => view('laporan/v_laporan', $data)
+        ];
+
+        // Encode the response array as JSON and return it
+        return $this->response->setJSON($response);
+    }
+
+    public function CetakLaporan()
+    {
+        $bulan = $this->request->getPost('bulan');
+        $tahun = $this->request->getPost('tahun');
+        $data = [
+            'kas' => $this->ModelKasMasjid->DataBulanan($bulan, $tahun),
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+        ];
+        $response = [
+            'data' => view('laporan/v_laporan', $data)
+        ];
+        echo json_encode($response);
+    }
 
 }

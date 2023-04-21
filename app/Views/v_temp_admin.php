@@ -165,6 +165,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url('KasMasjid/Laporan') ?>" class="nav-link <?= $menu == 'laporan' ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-print"></i>
+                <p>
+                  Print Laporan
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('Rekening') ?>" class="nav-link <?= $menu == 'rekening' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-credit-card"></i>
                 <p>
