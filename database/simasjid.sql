@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2023 at 01:14 PM
+-- Generation Time: Apr 21, 2023 at 01:11 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.3
 
@@ -92,12 +92,14 @@ CREATE TABLE `tbl_kas_masjid` (
 
 INSERT INTO `tbl_kas_masjid` (`id_kas_masjid`, `tanggal`, `ket`, `kas_masuk`, `kas_keluar`, `status`) VALUES
 (1, '2023-03-15', 'saldo awal', 10000000, 0, 'masuk'),
-(3, '2023-03-15', 'pembayaran b', 111, 20000, 'keluar'),
-(23, '2023-03-15', 'test keluar', 11, 9999, 'keluar'),
+(3, '2023-03-15', 'pembayaran b', 0, 20000, 'keluar'),
+(23, '2023-03-15', 'test keluar', 0, 9999, 'keluar'),
 (24, '2023-03-23', 'test masuk', 8888, 0, 'masuk'),
-(26, '2023-03-17', 'Donasi', 111111, 0, 'masuk'),
+(26, '2023-03-17', 'Donasi', 1000, 0, 'masuk'),
 (27, '2023-03-24', 'Donasi 2', 123123, 0, 'masuk'),
-(28, '2023-03-16', 'beli makan', 0, 123412, 'keluar');
+(28, '2023-03-16', 'beli makan', 0, 123412, 'keluar'),
+(30, '2023-04-21', 'asdas', 10000, 0, 'masuk'),
+(31, '2023-04-21', 'asdasd', 0, 10000, 'keluar');
 
 -- --------------------------------------------------------
 
@@ -173,9 +175,7 @@ INSERT INTO `tbl_rekening` (`id_rek`, `nama_rek`, `no_rek`, `atas_nama`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id_user` int NOT NULL,
-  `nama_user` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -183,8 +183,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `email`, `password`) VALUES
-(1, 'Syaid Andhika', 'admin@admin.com', 'admin');
+INSERT INTO `user` (`email`, `password`) VALUES
+('admin@admin.com', '1');
 
 --
 -- Indexes for dumped tables
@@ -230,7 +230,7 @@ ALTER TABLE `tbl_rekening`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -252,7 +252,7 @@ ALTER TABLE `tbl_donasi`
 -- AUTO_INCREMENT for table `tbl_kas_masjid`
 --
 ALTER TABLE `tbl_kas_masjid`
-  MODIFY `id_kas_masjid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_kas_masjid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengaturan`
@@ -271,12 +271,6 @@ ALTER TABLE `tbl_pesan`
 --
 ALTER TABLE `tbl_rekening`
   MODIFY `id_rek` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
