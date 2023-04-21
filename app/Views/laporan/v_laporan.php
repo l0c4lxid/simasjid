@@ -9,6 +9,19 @@ if ($kas == null) {
     }
 }
 ?>
+<div class='col-sm-12' id='printarea'>
+    <div class='text-center'>
+        <p class='text-center'>
+        <h3><b>
+                Masjid
+                <?= $masjid['nama_masjid'] ?>
+            </b></h3>
+        </p>
+        <p class='text-center'>
+            <?= $masjid['alamat'] ?><br>Laporan Kas Masjid
+        </p>
+    </div>
+</div>
 <b> Bulan :
     <?= $bulan ?>
 </b>

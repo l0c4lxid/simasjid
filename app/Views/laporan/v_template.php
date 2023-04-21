@@ -40,12 +40,14 @@
                     <div class="form-group">
                         <label>&nbsp;</label>
                         <button class="btn btn-primary" onclick="viewLaporan()">View</button>
-                        <button class="btn btn-primary" onclick="printLaporan()">Print</button>
+                        <button class="btn btn-success" onclick="printLaporan()">Print</button>
                     </div>
                 </div>
             </div>
+            <!--  -->
             <hr>
             <div class="Tabel"></div>
+
         </div>
     </div>
 </div>

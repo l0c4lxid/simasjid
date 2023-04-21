@@ -144,6 +144,7 @@ class KasMasjid extends BaseController
             'kas' => $this->ModelKasMasjid->DataBulanan($bulan, $tahun),
             'bulan' => $bulan,
             'tahun' => $tahun,
+            'masjid' => $this->ModelAdmin->ViewPengaturan(),
         ];
 
         // Render the view as a string and assign it to the 'data' key in the response array
