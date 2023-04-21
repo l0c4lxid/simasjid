@@ -9,7 +9,7 @@ if ($kas == null) {
     }
 }
 ?>
-<div class='col-sm-12' id='printarea'>
+<div class='col-sm-12 text-center' id='printarea'>
     <div class='text-center'>
         <p class='text-center'>
         <h3><b>
@@ -39,22 +39,23 @@ if ($kas == null) {
         </tr>
         <?php $no = 1;
         foreach ($kas as $key => $value) { ?>
-            <tr class="<?= $value['status'] == 'Masuk' ? 'text-success' : 'text-danger' ?>"></tr>
-            <td class="text-center">
-                <?= $no++ ?>
-            </td>
-            <td class="text-center">
-                <?= $value['tanggal'] ?>
-            </td>
-            <td class="text-left">
-                <?= $value['ket'] ?>
-            </td>
-            <td class="text-right">Rp.
-                <?= number_format($value['kas_masuk']) ?>
-            </td>
-            <td class="text-right">Rp.
-                <?= number_format($value['kas_keluar']) ?>
-            </td>
+            <tr class="<?= $value['status'] == 'masuk' ? 'text-success' : 'text-danger' ?>">
+                <td class="text-center">
+                    <?= $no++ ?>
+                </td>
+                <td class="text-center">
+                    <?= $value['tanggal'] ?>
+                </td>
+                <td class="text-left">
+                    <?= $value['ket'] ?>
+                </td>
+                <td class="text-right">Rp.
+                    <?= number_format($value['kas_masuk']) ?>
+                </td>
+                <td class="text-right">Rp.
+                    <?= number_format($value['kas_keluar']) ?>
+                </td>
+            </tr>
         <?php } ?>
         <tr>
             <th class='text-center' colspan="3">Total</th>

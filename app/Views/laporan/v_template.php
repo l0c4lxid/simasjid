@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="bulan">Bulan</label>
                         <select name="bulan" id="bulan" class="form-control">
@@ -25,7 +25,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="tahun">Tahun</label>
                         <select name="tahun" id="tahun" class="form-control">
@@ -36,15 +36,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label>&nbsp;</label>
-                        <button class="btn btn-primary" onclick="viewLaporan()">View</button>
-                        <button class="btn btn-success" onclick="printLaporan()">Print</button>
+                        <button class="btn btn-primary" onclick="viewLaporan()"><i class="fas fa-eye"></i> View</button>
+                        <button class="btn btn-success" onclick="printLaporan()"><i class="fas fa-print"></i>
+                            Print</button>
                     </div>
                 </div>
             </div>
-            <!--  -->
             <hr>
             <div class="Tabel"></div>
 
