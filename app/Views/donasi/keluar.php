@@ -9,7 +9,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive">
-                <table class="table table-head-fixed text-nowrap" >
+                <table class="table table-head-fixed text-nowrap table-bordered table-hover" >
                     <tread>
                         <tr>
                         <th width='50px'>No</th>

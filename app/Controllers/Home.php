@@ -73,11 +73,11 @@ class Home extends BaseController
         ];
         return view('v_temp', $data);
     }
-    public function DonasiMasuk()
+    public function InfaqMasuk()
     {
         $data = [
-            'judul' => 'DonasiMasuk',
-            'page' => 'Depan/DonasiMasuk',
+            'judul' => 'Infaq Masuk',
+            'page' => 'Depan/InfaqMasuk',
             'donasi' => $this->ModelDonasi->AllDataTable(),
         ];
         return view('v_temp', $data);

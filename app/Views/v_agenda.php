@@ -28,25 +28,21 @@
       </div>
       <br>
 
-      <table id="myTable" class="table">
+      <table id="myTable" class="table table-bordered table-hover text-nowrap">
         <!-- <table class="table" id="example2"> -->
         <tread>
           <tr>
-            <th width='50px'>No</th>
-            <th width='50px'></th>
+            <th class='text-center' width='50px'>No</th>
             <th>Nama Kegiatan</th>
-            <th>Action</th>
+            <th class='text-center'>Action</th>
           </tr>
         </tread>
         <tbody>
           <?php $no = 1;
           foreach ($agenda as $key => $value) { ?>
             <tr>
-              <td>
+              <td class='text-center'>
                 <?= $no++ ?>
-              </td>
-              <td>
-                <i class='fas fa-bullhorn text-success'></i>
               </td>
               <td>
                 <p>
@@ -59,7 +55,7 @@
                   <?= $value['jam'] ?> - Selesai
                 </p>
               </td>
-              <td>
+              <td class='text-center'>
                 <button class="btn btn-flat btn-sm btn-warning" data-toggle="modal"
                   data-target="#modal-edit<?= $value['id_agenda'] ?>"><i class="fas fa-pencil-alt"></i></button>
                 <button class="btn btn-flat btn-sm btn-danger" data-toggle="modal"

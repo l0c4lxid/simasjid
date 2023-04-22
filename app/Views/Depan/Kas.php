@@ -6,11 +6,11 @@
             </h3>
         </div>
         <div class="card-body table-responsive">
-            <table class='table table-head-fixed text-nowrap'>
+            <table class='table table table-bordered table-hover text-nowrap'>
                 <tread>
                     <tr class="text-center">
                         <th width='50px'>No</th>
-                        <th width='100px'>Tanggal</th>
+                        <th class='text-center' width='200px'>Tanggal</th>
                         <th>Keterangan</th>
                         <th>Kas Masuk</th>
                         <th>Kas Keluar</th>
@@ -23,7 +23,7 @@
                             <td>
                                 <?= $no++ ?>
                             </td>
-                            <td>
+                            <td class='text-center'>
                                 <?= $value['tanggal'] ?>
                             </td>
                             <td>

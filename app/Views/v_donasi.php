@@ -22,7 +22,7 @@
       </div>
       <br>
 
-      <table class="table table-head-fixed text-nowrap" id="myTable">
+      <table class="table table-bordered table-hover table-head-fixed text-nowrap" id="myTable">
         <tread>
           <tr>
             <th width='50px'>No.</th>
