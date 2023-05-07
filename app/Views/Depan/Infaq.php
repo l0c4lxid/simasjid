@@ -48,7 +48,7 @@
       ?>
       <table class='table' id="example1">
         <div class="modal-body">
-          <?php echo form_open_multipart("Home/InsertDataDonasi") ?>
+          <?php echo form_open_multipart("Home/InsertDataInfaq") ?>
           <div class='form-group'>
             <label>Tujuan</label>
             <select name="id_rek" class="form-control">

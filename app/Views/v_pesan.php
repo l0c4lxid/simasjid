@@ -26,6 +26,7 @@
                         <th>Judul</th>
                         <th>Isi Pesan</th>
                         <th>Waktu Dikirim</th>
+                        <th class='text-center'>Action</th>
                     </tr>
                 </tread>
                 <tbody>
@@ -50,6 +51,11 @@
                             <td>
                                 <?= $value['tanggal_kirim'] ?>
                             </td>
+                            <td class='text-center'>
+                                <button class="btn btn-flat btn-sm btn-danger" data-toggle="modal"
+                                    data-target="#modal-hapus<?= $value['id_pesan'] ?>"><i
+                                        class="fas fa-trash"></i></button>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -59,6 +65,34 @@
     </div>
     <!-- /.card -->
 </div>
+<?php foreach ($pesan as $key => $value) { ?>
+    <div class="modal fade" id="modal-hapus<?= $value['id_pesan'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Hapus
+                        <?= $value['nama_pesan'] ?>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah Ingin Hapus Pesan dari
+                    <b>
+                        <?= $value['nama_pesan'] ?>
+                    </b> ?
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                    <a href="<?= base_url('Admin/HapusDataPesan/' . $value['id_pesan']) ?>" class="btn btn-danger">Hapus</a>
+                </div>
+                <?php echo form_close() ?>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+<?php } ?>
 <script>
     $(document).ready(function () {
         $('#myInput').on('keyup', function () {

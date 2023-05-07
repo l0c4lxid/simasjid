@@ -20,7 +20,7 @@ class KasMasjid extends BaseController
             'subjudul' => '',
             'menu' => 'kas-masjid',
             'submenu' => 'rekap-masjid',
-            'page' => 'v_rekap_kas_masjid',
+            'page' => 'kas-masjid/v_rekap_kas_masjid',
             'kas' => $this->ModelKasMasjid->AllData(),
         ];
         return view('v_temp_admin', $data);

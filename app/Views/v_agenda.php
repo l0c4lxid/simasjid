@@ -12,7 +12,7 @@
       <!-- /.card-tools -->
     </div>
     <!-- /.card-header -->
-    <div class="card-body">
+    <div class="card-body table-responsive">
       <?php
       if (session()->getFlashdata('pesan')) {
         echo '<div class="alert alert-success">';
@@ -28,7 +28,7 @@
       </div>
       <br>
 
-      <table id="myTable" class="table table-bordered table-hover text-nowrap">
+      <table id="myTable" class="table table-head-fixed text-nowrap">
         <!-- <table class="table" id="example2"> -->
         <tread>
           <tr>

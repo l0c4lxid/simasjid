@@ -180,8 +180,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item <?= $menu == 'donasi-masjid' ? 'active' : '' ?>">
-              <a href="#" class="nav-link <?= $menu == 'donasi-masjid' ? 'active' : '' ?>">
+            <li class="nav-item <?= $menu == 'infaq-masjid' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $menu == 'infaq-masjid' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-donate"></i>
                 <p>
                   Donasi
@@ -190,21 +190,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('Admin/Donasi') ?>"
-                    class="nav-link <?= $submenu == 'rekap-kas' ? 'active' : '' ?>">
+                  <a href="<?= base_url('Admin/Infaq') ?>"
+                    class="nav-link <?= $submenu == 'infaq-masjid' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon text-primary"></i>
                     <p>Rekap Donasi</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('Admin/DonasiMasuk') ?>"
-                    class="nav-link <?= $menu == 'donasi-masuk' ? 'active' : '' ?>">
+                  <a href="<?= base_url('Admin/InfaqMasuk') ?>"
+                    class="nav-link <?= $menu == 'infaq-masuk' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon text-success"></i>
                     <p>Donasi Masuk</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('Admin/DonasiKeluar') ?>"
+                  <a href="<?= base_url('Admin/InfaqKeluar') ?>"
                     class="nav-link <?= $menu == 'donasi-keluar' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon text-danger"></i>
                     <p>Donasi Keluar</p>

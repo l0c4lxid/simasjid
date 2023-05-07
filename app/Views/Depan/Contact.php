@@ -17,6 +17,7 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
             <div class="col-5 text-center d-flex align-items-center justify-content-center">
                 <div class="">
                     <h2><strong>
+                            <i class="fas fa-mosque fa-4x text-green"></i><br>
                             Masjid
                             <?= $web['nama_masjid'] ?>
                         </strong></h2>

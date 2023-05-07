@@ -33,6 +33,8 @@
             <th>Jumlah</th>
             <th>Bukti</th>
             <th>Status</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
             <th>Action</th>
           </tr>
         </tread>
@@ -65,6 +67,12 @@
               <td><img src="<?= base_url('bukti/' . $value['bukti']) ?>" width="200px"></td>
               <td>
                 <?= $value['status'] ?>
+              </td>
+              <td>
+                <?php echo date('Y-m-d', strtotime($value['tanggal'])); ?>
+              </td>
+              <td>
+                <?php echo date('H:i:s', strtotime($value['tanggal'])); ?>
               </td>
               <td>
                 <button class="btn btn-flat btn-sm btn-warning" data-toggle="modal"

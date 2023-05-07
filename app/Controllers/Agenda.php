@@ -11,7 +11,8 @@ class Agenda extends BaseController
     {
         $this->ModelAgenda = new ModelAgenda();
     }
-    public function index(){
+    public function index()
+    {
         $data = [
             'judul' => 'Agenda',
             'subjudul' => '',

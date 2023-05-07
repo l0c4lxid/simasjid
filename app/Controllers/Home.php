@@ -78,7 +78,7 @@ class Home extends BaseController
         $data = [
             'judul' => 'Infaq Masuk',
             'page' => 'Depan/InfaqMasuk',
-            'donasi' => $this->ModelDonasi->AllDataTable(),
+            'donasi' => $this->ModelHome->Infaq(),
         ];
         return view('v_temp', $data);
     }
@@ -92,7 +92,7 @@ class Home extends BaseController
         ];
         return view('v_temp', $data);
     }
-    public function InsertDataDonasi()
+    public function InsertDataInfaq()
     {
         $bukti = $this->request->getFile('bukti');
         $namabukti = $bukti->getRandomName();
@@ -103,7 +103,8 @@ class Home extends BaseController
             'an' => $this->request->getPost('an'),
             'jumlah' => $this->request->getPost('jumlah'),
             'bukti' => $namabukti,
-            'status' => 'Pending'
+            'status' => 'Pending',
+            'tanggal' => date('Y-m-d H:i:s')
 
         ];
         $bukti->move('bukti', $namabukti);

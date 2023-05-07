@@ -2,6 +2,7 @@
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">Data Infaq Yang Terkirim
+                <?= date('M Y') ?>
             </h3>
             <div class="card-tools">
             </div>
@@ -17,6 +18,8 @@
                         <th class='text-center'>Nama Bank</th>
                         <th class='text-center'>Atas Nama</th>
                         <th class='text-center'>Jumlah</th>
+                        <th class='text-center'>Tanggal</th>
+                        <th class='text-center'>Waktu</th>
                         <th class='text-center'>Status</th>
                     </tr>
                 </tread>
@@ -42,6 +45,12 @@
                             </td>
                             <td class="text-right">Rp.
                                 <?= number_format($value['jumlah']) ?>
+                            </td>
+                            <td class="text-center">
+                                <?php echo date('Y-m-d', strtotime($value['tanggal'])); ?>
+                            </td>
+                            <td class="text-center">
+                                <?php echo date('H:i:s', strtotime($value['tanggal'])); ?>
                             </td>
                             <td class='text-center'>
                                 <?= $value['status'] ?>

@@ -15,4 +15,10 @@ class ModelPesan extends Model
     {
         $this->db->table('tbl_pesan')->insert($data);
     }
+    public function HapusDataPesan($data)
+    {
+        $this->db->table('tbl_pesan')
+            ->where('id_pesan', $data['id_pesan'])
+            ->delete($data);
+    }
 }

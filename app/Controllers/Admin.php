@@ -44,6 +44,16 @@ class Admin extends BaseController
         ];
         return view('v_temp_admin', $data);
     }
+    public function HapusDataPesan($id_pesan)
+    {
+        $data = [
+            'id_pesan' => $id_pesan,
+        ];
+        $this->ModelPesan->HapusDataPesan($data);
+        session()->setFlashdata('pesan', 'Berhasil Dihapus !');
+        return redirect()->to(base_url('Admin/PesanMasuk'));
+    }
+
     public function Pengaturan()
     {
         $url = 'https://api.myquran.com/v1/sholat/kota/semua';
@@ -74,39 +84,43 @@ class Admin extends BaseController
         return redirect()->to(base_url('Admin/Pengaturan'));
     }
 
-    public function Donasi()
+    public function Infaq()
     {
         $data = [
-            'judul' => 'Donasi',
+            'judul' => 'Infaq',
             'subjudul' => '',
-            'menu' => 'donasi',
+            'menu' => 'infaq',
             'submenu' => '',
-            'page' => 'v_donasi',
+            'page' => 'infaq/v_infaq',
             'donasi' => $this->ModelDonasi->AllDataTable(),
+            // "jumlah_masuk" => $this->ModelDonasi->hitung_donasi_masuk(),
+            // "jumlah_keluar" => $this->ModelDonasi->hitung_donasi_keluar(),
         ];
+        // var_dump($jumlah_masuk);
+        // die;
         return view('v_temp_admin', $data);
     }
-    public function DonasiMasuk()
+    public function InfaqMasuk()
     {
         $data = [
-            'judul' => 'Pemasukan Donasi Masuk Kas Masjid',
+            'judul' => 'Infaq Masuk Kas Masjid',
             'subjudul' => '',
-            'menu' => 'donasi-masjid',
-            'submenu' => 'donasi-masuk',
-            'page' => 'donasi/masuk.php',
+            'menu' => 'infaq-masjid',
+            'submenu' => 'infaq-masuk',
+            'page' => 'infaq/masuk.php',
             'donasi' => $this->ModelDonasi->Masuk(),
 
         ];
         return view('v_temp_admin', $data);
     }
-    public function DonasiKeluar()
+    public function InfaqKeluar()
     {
         $data = [
-            'judul' => 'Pemasukan Donasi Keluar Kas Masjid',
+            'judul' => 'Infaq Keluar Kas Masjid',
             'subjudul' => '',
-            'menu' => 'donasi-masjid',
-            'submenu' => 'donasi-keluar',
-            'page' => 'donasi/keluar.php',
+            'menu' => 'infaq-masjid',
+            'submenu' => 'infaq-keluar',
+            'page' => 'infaq/keluar.php',
             'donasi' => $this->ModelDonasi->Keluar(),
         ];
         return view('v_temp_admin', $data);
@@ -119,7 +133,7 @@ class Admin extends BaseController
         ];
         $this->ModelDonasi->UpdateData($data);
         session()->setFlashdata('pesan', 'Berhasil Diupdate !');
-        return redirect()->to(base_url('Admin/Donasi'));
+        return redirect()->to(base_url('Admin/Infaq'));
     }
 
 }

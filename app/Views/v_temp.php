@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
         <a href="<?= base_url('') ?>" class="navbar-brand">
-          <i class="fas fa-mosque fa-2x text-green"></i> <b>
+          <i class="fas fa-mosque text-green"></i> <b>
             <?= $web['nama_masjid'] ?>
           </b>
         </a>
@@ -59,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   class="nav-link dropdown-toggle">Rekap Data Masjid</a>
                 <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                   <li><a href="<?= base_url('Home/Kas') ?>" class="dropdown-item">Data Rekap Kas </a></li>
-                  <li><a href="<?= base_url('Home/InfaqMasuk') ?>" class="dropdown-item">Data Donator</a></li>
+                  <li><a href="<?= base_url('Home/InfaqMasuk') ?>" class="dropdown-item">Data Infaq</a></li>
                 </ul>
               </li>
               <li class="nav-item">
