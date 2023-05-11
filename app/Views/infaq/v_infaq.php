@@ -1,3 +1,32 @@
+<?php
+if ($jumlah_masuk == null) {
+  $jumlah_masuk[] = 0;
+} else {
+  $jumlah_masuk['jumlah'];
+}
+?>
+
+<?php
+if ($jumlah_keluar == null) {
+  $jumlah_keluar[] = 0;
+} else {
+  $jumlah_keluar['jumlah'];
+}
+?>
+
+<div class="col-md-12">
+  <div class="alert alert-primary alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h5><i class="icon fas fa-info"></i> Rekap Total Donasi Masuk</h5>
+    Masuk : Rp.
+    <?= number_format(array_sum($jumlah_masuk), 0) ?>
+    <br>
+    Keluar : Rp.
+    <?= number_format(array_sum($jumlah_keluar), 0) ?>
+
+  </div>
+</div>
+
 <div class="col-md-12">
   <div class="card card-success">
     <div class="card-header">
@@ -106,7 +135,7 @@
           <div class='form-group'>
             <div class='form-group'>
               <label>Bukti</label><br>
-              <img src="<?= base_url('bukti/' . $value['bukti']) ?>" width="450px">
+              <img src="<?= base_url('bukti/' . $value['bukti']) ?>" width="350px">
             </div>
             <label>Status</label>
             <select name="status" class="form-control" required>

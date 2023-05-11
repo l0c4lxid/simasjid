@@ -93,10 +93,10 @@ class Admin extends BaseController
             'submenu' => '',
             'page' => 'infaq/v_infaq',
             'donasi' => $this->ModelDonasi->AllDataTable(),
-            // "jumlah_masuk" => $this->ModelDonasi->hitung_donasi_masuk(),
-            // "jumlah_keluar" => $this->ModelDonasi->hitung_donasi_keluar(),
+            "jumlah_masuk" => $this->ModelDonasi->hitung_donasi_masuk(),
+            "jumlah_keluar" => $this->ModelDonasi->hitung_donasi_keluar(),
         ];
-        // var_dump($jumlah_masuk);
+        // var_dump($data);
         // die;
         return view('v_temp_admin', $data);
     }

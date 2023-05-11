@@ -56,16 +56,17 @@ class ModelDonasi extends Model
      }
      public function hitung_donasi_masuk()
      {
-          $this->db->table('tbl_donasi')
+          return $this->db->table('tbl_donasi')
                ->selectSum('jumlah')
                ->where('status', 'Masuk')
-               ->get()->getResultArray();
+               ->get()->getRowArray();
      }
      public function hitung_donasi_keluar()
      {
-          $this->db->table('tbl_donasi')
+          return $this->db->table('tbl_donasi')
                ->selectSum('jumlah')
                ->where('status', 'Keluar')
                ->get()->getRowArray();
      }
+
 }
