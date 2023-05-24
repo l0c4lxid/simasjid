@@ -9,6 +9,7 @@ use App\Models\ModelRekening;
 use App\Models\ModelDonasi;
 use App\Models\ModelPesan;
 use App\Models\ModelAgenda;
+use CodeIgniter\I18n\Time;
 
 
 class Home extends BaseController
@@ -94,9 +95,12 @@ class Home extends BaseController
     }
     public function InsertDataInfaq()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd-Hi');
         $bukti = $this->request->getFile('bukti');
         $namabukti = $bukti->getRandomName();
         $data = [
+            'id_donasi' => "INF-" . $formattedTime,
             'id_rek' => $this->request->getPost('id_rek'),
             'nama_bank' => $this->request->getPost('nama_bank'),
             'no_rekening' => $this->request->getPost('no_rekening'),
@@ -114,7 +118,10 @@ class Home extends BaseController
     }
     public function InsertDataPesan()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd-Hi');
         $data = [
+            'id_pesan' => "PSN-" . $formattedTime,
             'nama_pesan' => $this->request->getPost('nama_pesan'),
             'wa_pesan' => $this->request->getPost('wa_pesan'),
             'judul_pesan' => $this->request->getPost('judul_pesan'),

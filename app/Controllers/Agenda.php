@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelAgenda;
+use CodeIgniter\I18n\Time;
 
 class Agenda extends BaseController
 {
@@ -25,7 +26,10 @@ class Agenda extends BaseController
     }
     public function InsertData()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd-Hi');
         $data = [
+            'id_agenda' => "AGD-" . $formattedTime,
             'nama_kegiatan' => $this->request->getPost('nama_kegiatan'),
             'tanggal' => $this->request->getPost('tanggal'),
             'jam' => $this->request->getPost('jam')

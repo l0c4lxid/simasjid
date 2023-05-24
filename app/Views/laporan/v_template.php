@@ -45,6 +45,7 @@
                     </div>
                 </div>
             </div>
+            <p class="text-danger">*Print hanya digunakan mode desktop</p>
             <hr>
             <div class="Tabel"></div>
 

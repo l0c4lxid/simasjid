@@ -32,7 +32,7 @@ CREATE TABLE `tbl_agenda` (
   `nama_kegiatan` varchar(20) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `jam` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_agenda`
@@ -57,7 +57,7 @@ CREATE TABLE `tbl_donasi` (
   `jumlah` int DEFAULT NULL,
   `bukti` varchar(100) DEFAULT NULL,
   `status` varchar(7) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_donasi`
@@ -80,11 +80,11 @@ INSERT INTO `tbl_donasi` (`id_donasi`, `id_rek`, `nama_bank`, `no_rekening`, `an
 CREATE TABLE `tbl_kas_masjid` (
   `id_kas_masjid` int NOT NULL,
   `tanggal` date DEFAULT NULL,
-  `ket` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `ket` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `kas_masuk` int DEFAULT NULL,
   `kas_keluar` int DEFAULT NULL,
   `status` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_kas_masjid`
@@ -115,7 +115,7 @@ CREATE TABLE `tbl_pengaturan` (
   `alamat` varchar(50) NOT NULL,
   `wa_masjid` varchar(15) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_pengaturan`
@@ -133,11 +133,11 @@ INSERT INTO `tbl_pengaturan` (`id`, `nama_masjid`, `id_kota`, `nama_kota`, `alam
 CREATE TABLE `tbl_pesan` (
   `id_pesan` int NOT NULL,
   `nama_pesan` varchar(30) DEFAULT NULL,
-  `wa_pesan` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `wa_pesan` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `judul_pesan` varchar(128) DEFAULT NULL,
   `isi_pesan` varchar(255) DEFAULT NULL,
   `tanggal_kirim` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_pesan`
@@ -156,8 +156,8 @@ CREATE TABLE `tbl_rekening` (
   `id_rek` int NOT NULL,
   `nama_rek` varchar(15) DEFAULT NULL,
   `no_rek` varchar(20) DEFAULT NULL,
-  `atas_nama` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `atas_nama` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_rekening`
@@ -175,9 +175,9 @@ INSERT INTO `tbl_rekening` (`id_rek`, `nama_rek`, `no_rek`, `atas_nama`) VALUES
 --
 
 CREATE TABLE `user` (
-  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ModelKasMasjid;
 use App\Models\ModelAdmin;
+use CodeIgniter\I18n\Time;
 
 class KasMasjid extends BaseController
 {
@@ -53,7 +54,10 @@ class KasMasjid extends BaseController
     }
     public function InsertDataKas()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd-Hi');
         $data = [
+            'id_kas_masjid' => "KASM-" . $formattedTime,
             'ket' => $this->request->getPost('ket'),
             'tanggal' => $this->request->getPost('tanggal'),
             'kas_masuk' => $this->request->getPost('kas_masuk'),
@@ -66,7 +70,10 @@ class KasMasjid extends BaseController
     }
     public function InsertDataKasKeluar()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd-Hi');
         $data = [
+            'id_kas_masjid' => "KASK-" . $formattedTime,
             'ket' => $this->request->getPost('ket'),
             'tanggal' => $this->request->getPost('tanggal'),
             'kas_masuk' => 0,

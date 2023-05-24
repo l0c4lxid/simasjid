@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelRekening;
+use CodeIgniter\I18n\Time;
 
 class Rekening extends BaseController
 {
@@ -11,7 +12,8 @@ class Rekening extends BaseController
     {
         $this->ModelRekening = new ModelRekening();
     }
-    public function index(){
+    public function index()
+    {
         $data = [
             'judul' => 'Rekening',
             'subjudul' => '',
@@ -24,7 +26,10 @@ class Rekening extends BaseController
     }
     public function InsertData()
     {
+        $currentTime = Time::now();
+        $formattedTime = $currentTime->format('ymd');
         $data = [
+            'id_rek' => "RKN-" . $formattedTime,
             'nama_rek' => $this->request->getPost('nama_rek'),
             'no_rek' => $this->request->getPost('no_rek'),
             'atas_nama' => $this->request->getPost('atas_nama')
