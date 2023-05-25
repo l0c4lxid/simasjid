@@ -27,7 +27,7 @@ class Rekening extends BaseController
     public function InsertData()
     {
         $currentTime = Time::now();
-        $formattedTime = $currentTime->format('ymd');
+        $formattedTime = $currentTime->format('ymdHi');
         $data = [
             'id_rek' => "RKN-" . $formattedTime,
             'nama_rek' => $this->request->getPost('nama_rek'),
