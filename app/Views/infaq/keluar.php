@@ -33,7 +33,7 @@
                             <td><?= $value['no_rekening']?></td>
                             <td><?= $value['an']?></td>
                             <td class="text-left">Rp. <?= number_format($value['jumlah']) ?></td>
-                            <td><img src="<?= base_url('bukti/' . $value['bukti'])?>" width="500px"></td>
+                            <td><img src="<?= base_url('bukti/' . $value['bukti'])?>" width="350px"></td>
                         </tr>
                         <?php } ?>
                     </tbody>

@@ -180,8 +180,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item <?= $menu == 'infaq-masjid' ? 'active' : '' ?>">
-              <a href="#" class="nav-link <?= $menu == 'infaq-masjid' ? 'active' : '' ?>">
+            <li class="nav-item <?= $menu == 'infaq' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $menu == 'infaq' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-donate"></i>
                 <p>
                   Infaq

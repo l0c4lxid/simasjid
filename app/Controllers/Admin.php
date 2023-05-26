@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\ModelAdmin;
 use App\Models\ModelKasMasjid;
 use App\Models\ModelRekening;
-use App\Models\ModelDonasi;
+use App\Models\ModelInfaq;
 use App\Models\ModelPesan;
 
 
@@ -17,7 +17,7 @@ class Admin extends BaseController
         $this->ModelAdmin = new ModelAdmin;
         $this->ModelKasMasjid = new ModelKasMasjid;
         $this->ModelRekening = new ModelRekening;
-        $this->ModelDonasi = new ModelDonasi;
+        $this->ModelInfaq = new ModelInfaq;
         $this->ModelPesan = new ModelPesan;
 
     }
@@ -93,9 +93,9 @@ class Admin extends BaseController
             'menu' => 'infaq',
             'submenu' => '',
             'page' => 'infaq/v_infaq',
-            'donasi' => $this->ModelDonasi->AllDataTable(),
-            "jumlah_masuk" => $this->ModelDonasi->hitung_donasi_masuk(),
-            "jumlah_keluar" => $this->ModelDonasi->hitung_donasi_keluar(),
+            'donasi' => $this->ModelInfaq->AllDataTable(),
+            "jumlah_masuk" => $this->ModelInfaq->hitung_infaq_masuk(),
+            "jumlah_keluar" => $this->ModelInfaq->hitung_infaq_keluar(),
         ];
         // var_dump($data);
         // die;
@@ -106,10 +106,10 @@ class Admin extends BaseController
         $data = [
             'judul' => 'Infaq Masuk Kas Masjid',
             'subjudul' => '',
-            'menu' => 'infaq-masjid',
+            'menu' => 'infaq',
             'submenu' => 'infaq-masuk',
             'page' => 'infaq/masuk.php',
-            'donasi' => $this->ModelDonasi->Masuk(),
+            'donasi' => $this->ModelInfaq->Masuk(),
 
         ];
         return view('v_temp_admin', $data);
@@ -119,20 +119,20 @@ class Admin extends BaseController
         $data = [
             'judul' => 'Infaq Keluar Kas Masjid',
             'subjudul' => '',
-            'menu' => 'infaq-masjid',
+            'menu' => 'infaq',
             'submenu' => 'infaq-keluar',
             'page' => 'infaq/keluar.php',
-            'donasi' => $this->ModelDonasi->Keluar(),
+            'donasi' => $this->ModelInfaq->Keluar(),
         ];
         return view('v_temp_admin', $data);
     }
-    public function UpdateData($id_donasi)
+    public function UpdateData($id_infaq)
     {
         $data = [
-            'id_donasi' => $id_donasi,
+            'id_infaq' => $id_infaq,
             'status' => $this->request->getPost('status')
         ];
-        $this->ModelDonasi->UpdateData($data);
+        $this->ModelInfaq->UpdateData($data);
         session()->setFlashdata('pesan', 'Berhasil Diupdate !');
         return redirect()->to(base_url('Admin/Infaq'));
     }

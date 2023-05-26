@@ -45,7 +45,7 @@ class KasMasjid extends BaseController
             'judul' => 'Pengeluaran Uang Kas Masjid',
             'subjudul' => '',
             'menu' => 'kas-masjid',
-            'submenu' => 'masuk-masjid',
+            'submenu' => 'keluar-masjid',
             'page' => 'kas-masjid/v_keluar_kas_masjid',
             'kas' => $this->ModelKasMasjid->Keluar(),
 

@@ -16,8 +16,8 @@ class ModelHome extends Model
     }
     public function Infaq()
     {
-        return $this->db->table('tbl_donasi')
-            ->join('tbl_rekening', 'tbl_rekening.id_rek = tbl_donasi.id_rek', 'Left')
+        return $this->db->table('tbl_infaq')
+            ->join('tbl_rekening', 'tbl_rekening.id_rek = tbl_infaq.id_rek', 'Left')
             ->where('month(tanggal)', date('m'))
             ->where('year(tanggal)', date('Y'))
             ->orderBy('tanggal', 'ASC')

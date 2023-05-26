@@ -17,7 +17,7 @@ if ($jumlah_keluar == null) {
 <div class="col-md-12">
   <div class="alert alert-primary alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <h5><i class="icon fas fa-info"></i> Rekap Total Donasi Masuk</h5>
+    <h5><i class="icon fas fa-info"></i> Rekap Total Infaq Masuk</h5>
     Masuk : Rp.
     <?= number_format(array_sum($jumlah_masuk), 0) ?>
     <br>
@@ -105,7 +105,7 @@ if ($jumlah_keluar == null) {
               </td>
               <td>
                 <button class="btn btn-flat btn-sm btn-warning" data-toggle="modal"
-                  data-target="#modal-edit<?= $value['id_donasi'] ?>"><i class="fas fa-pencil-alt"></i></button>
+                  data-target="#modal-edit<?= $value['id_infaq'] ?>"><i class="fas fa-pencil-alt"></i></button>
               </td>
             </tr>
 
@@ -119,7 +119,7 @@ if ($jumlah_keluar == null) {
 </div>
 
 <?php foreach ($donasi as $key => $value) { ?>
-  <div class="modal fade" id="modal-edit<?= $value['id_donasi'] ?>">
+  <div class="modal fade" id="modal-edit<?= $value['id_infaq'] ?>">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -131,7 +131,7 @@ if ($jumlah_keluar == null) {
           </button>
         </div>
         <div class="modal-body">
-          <?php echo form_open('Admin/UpdateData/' . $value['id_donasi']) ?>
+          <?php echo form_open('Admin/UpdateData/' . $value['id_infaq']) ?>
           <div class='form-group'>
             <div class='form-group'>
               <label>Bukti</label><br>

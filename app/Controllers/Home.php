@@ -6,7 +6,7 @@ use App\Models\ModelHome;
 use App\Models\ModelAdmin;
 use App\Models\ModelKasMasjid;
 use App\Models\ModelRekening;
-use App\Models\ModelDonasi;
+use App\Models\ModelInfaq;
 use App\Models\ModelPesan;
 use App\Models\ModelAgenda;
 use CodeIgniter\I18n\Time;
@@ -20,7 +20,7 @@ class Home extends BaseController
         $this->ModelAdmin = new ModelAdmin();
         $this->ModelKasMasjid = new ModelKasMasjid();
         $this->ModelRekening = new ModelRekening();
-        $this->ModelDonasi = new ModelDonasi();
+        $this->ModelInfaq = new ModelInfaq();
         $this->ModelPesan = new ModelPesan();
         $this->ModelAgenda = new ModelAgenda();
 
@@ -89,7 +89,7 @@ class Home extends BaseController
             'judul' => 'Infaq',
             'page' => 'Depan/Infaq',
             'rek' => $this->ModelRekening->AllData(),
-            'donasi' => $this->ModelDonasi->AllData(),
+            'donasi' => $this->ModelInfaq->AllData(),
         ];
         return view('v_temp', $data);
     }
@@ -100,7 +100,7 @@ class Home extends BaseController
         $bukti = $this->request->getFile('bukti');
         $namabukti = $bukti->getRandomName();
         $data = [
-            'id_donasi' => "INF-" . $formattedTime,
+            'id_infaq' => "INF-" . $formattedTime,
             'id_rek' => $this->request->getPost('id_rek'),
             'nama_bank' => $this->request->getPost('nama_bank'),
             'no_rekening' => $this->request->getPost('no_rekening'),
@@ -112,7 +112,7 @@ class Home extends BaseController
 
         ];
         $bukti->move('bukti', $namabukti);
-        $this->ModelDonasi->InsertData($data);
+        $this->ModelInfaq->InsertData($data);
         session()->setFlashdata('pesan', 'Berhasil Dikirim !');
         return redirect()->to(base_url('Home/Infaq'));
     }
