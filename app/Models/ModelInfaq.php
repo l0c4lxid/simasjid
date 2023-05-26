@@ -68,5 +68,4 @@ class ModelInfaq extends Model
                ->where('status', 'Keluar')
                ->get()->getRowArray();
      }
-
 }

@@ -78,10 +78,6 @@
             <label>Jumlah</label>
             <input type='number' name="jumlah" class="form-control" placeholder="Rp. " required></input>
           </div>
-          <!-- <div class='form-group'>
-            <label>Bukti</label>
-            <input type='file' id="bukti" name="bukti" class="form-control" required></input>
-          </div> -->
           <div class="form-group">
             <label for="bukti">Bukti</label>
             <div class="bukti">

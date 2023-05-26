@@ -50,7 +50,6 @@ class Agenda extends BaseController
         session()->setFlashdata('pesan', 'Berhasil Diupdate !');
         return redirect()->to(base_url('Agenda'));
     }
-
     public function HapusData($id_agenda)
     {
         $data = [

@@ -8,8 +8,6 @@ use App\Models\ModelRekening;
 use App\Models\ModelInfaq;
 use App\Models\ModelPesan;
 
-
-
 class Admin extends BaseController
 {
     public function __construct()
@@ -19,7 +17,6 @@ class Admin extends BaseController
         $this->ModelRekening = new ModelRekening;
         $this->ModelInfaq = new ModelInfaq;
         $this->ModelPesan = new ModelPesan;
-
     }
     public function index()
     {
@@ -84,7 +81,6 @@ class Admin extends BaseController
         session()->setFlashdata('pesan', 'Berhasil Diupdate !');
         return redirect()->to(base_url('Admin/Pengaturan'));
     }
-
     public function Infaq()
     {
         $data = [

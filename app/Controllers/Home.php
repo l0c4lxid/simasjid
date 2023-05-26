@@ -11,7 +11,6 @@ use App\Models\ModelPesan;
 use App\Models\ModelAgenda;
 use CodeIgniter\I18n\Time;
 
-
 class Home extends BaseController
 {
     public function __construct()
@@ -23,13 +22,13 @@ class Home extends BaseController
         $this->ModelInfaq = new ModelInfaq();
         $this->ModelPesan = new ModelPesan();
         $this->ModelAgenda = new ModelAgenda();
-
-
     }
     public function index()
     {
         $pengaturan = $this->ModelAdmin->ViewPengaturan();
-        $url = 'https://api.myquran.com/v1/sholat/jadwal/' . $pengaturan['id_kota'] . '/' . date('Y') . '/' . date('m') . '/' . date('d') . '';
+        $url = 'https://api.myquran.com/v1/sholat/jadwal/' .
+            $pengaturan['id_kota'] . '/' . date('Y') . '/' .
+            date('m') . '/' . date('d') . '';
         $waktu = json_decode(file_get_contents($url), true);
         $data = [
             'judul' => 'Home',
@@ -65,7 +64,6 @@ class Home extends BaseController
         ];
         return view('v_temp', $data);
     }
-
     public function Contact()
     {
         $data = [
