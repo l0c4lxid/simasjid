@@ -101,7 +101,7 @@ class Home extends BaseController
         ]);
 
         $currentTime = Time::now();
-        $formattedTime = $currentTime->format('ymd-Hi');
+        $formattedTime = $currentTime->format('ymd-His');
         $bukti = $this->request->getFile('bukti');
         $namabukti = $bukti->getRandomName();
         $data = [
