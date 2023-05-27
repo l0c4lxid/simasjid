@@ -88,11 +88,18 @@ class Home extends BaseController
             'page' => 'Depan/Infaq',
             'rek' => $this->ModelRekening->AllData(),
             'donasi' => $this->ModelInfaq->AllData(),
+            'validation' => \Config\Services::validation(),
         ];
         return view('v_temp', $data);
     }
     public function InsertDataInfaq()
     {
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'bukti' => 'uploaded[bukti]|mime_in[bukti,image/jpg,image/jpeg,image/png]|max_size[bukti,10240]'
+            // tambahkan aturan validasi lainnya sesuai kebutuhan
+        ]);
+
         $currentTime = Time::now();
         $formattedTime = $currentTime->format('ymd-Hi');
         $bukti = $this->request->getFile('bukti');
@@ -109,10 +116,18 @@ class Home extends BaseController
             'tanggal' => date('Y-m-d H:i:s')
 
         ];
-        $bukti->move('bukti', $namabukti);
-        $this->ModelInfaq->InsertData($data);
-        session()->setFlashdata('pesan', 'Berhasil Dikirim !');
-        return redirect()->to(base_url('Home/Infaq'));
+
+        if (!$validation->withRequest($this->request)->run()) {
+            session()->setFlashdata('gagal', 'Ada Kesalahan Input!');
+            // Jika validasi gagal, kembalikan ke halaman input dengan pesan error
+            return redirect()->to(base_url('Home/Infaq'));
+        } else {
+            $bukti->move('bukti', $namabukti);
+            $this->ModelInfaq->InsertData($data);
+            session()->setFlashdata('pesan', 'Berhasil Dikirim !');
+            // Jika validasi berhasil, kembalikan ke halaman input dengan pesan berhasil
+            return redirect()->to(base_url('Home/Infaq'));
+        }
     }
     public function InsertDataPesan()
     {

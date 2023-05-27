@@ -46,6 +46,13 @@
         echo '</div>';
       }
       ?>
+      <?php
+      if (session()->getFlashdata('gagal')) {
+        echo '<div class="alert alert-danger">';
+        echo session()->getFlashdata('gagal');
+        echo '</div>';
+      }
+      ?>
       <table class='table' id="example1">
         <div class="modal-body">
           <?php echo form_open_multipart("Home/InsertDataInfaq") ?>
@@ -63,7 +70,7 @@
               <option>BRI</option>
               <option>BCA</option>
               <option>BTN</option>
-              <option>Lainnya</option>
+              <option>BSI</option>
             </select>
           </div>
           <div class='form-group'>
@@ -72,7 +79,7 @@
           </div>
           <div class='form-group'>
             <label>Atas Nama</label>
-            <input type='char' name="an" class="form-control" placeholder="Ruham" required></input>
+            <input type='char' name="an" class="form-control" placeholder="Andhika" required></input>
           </div>
           <div class='form-group'>
             <label>Jumlah</label>
@@ -82,7 +89,7 @@
             <label for="bukti">Bukti</label>
             <div class="bukti">
               <div class="custom-file">
-                <input type="file" name="bukti" class="custom-file-input" id="bukti" required
+                <input type="file" name="bukti" class="custom-file-input" id="bukti" required accept="image/*"
                   onchange="displayFileName()">
                 <label class="custom-file-label" for="bukti" id="fileLabel">Pilih Gambar</label>
               </div>
