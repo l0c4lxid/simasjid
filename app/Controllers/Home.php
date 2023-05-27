@@ -8,7 +8,6 @@ use App\Models\ModelKasMasjid;
 use App\Models\ModelRekening;
 use App\Models\ModelInfaq;
 use App\Models\ModelPesan;
-use App\Models\ModelAgenda;
 use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
@@ -21,7 +20,6 @@ class Home extends BaseController
         $this->ModelRekening = new ModelRekening();
         $this->ModelInfaq = new ModelInfaq();
         $this->ModelPesan = new ModelPesan();
-        $this->ModelAgenda = new ModelAgenda();
     }
     public function index()
     {
