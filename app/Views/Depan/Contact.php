@@ -51,7 +51,7 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
                         required></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="kirim">
+                    <input type="submit" class="btn btn-success" value="Kirim">
                 </div>
             </div>
         </div>

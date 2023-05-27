@@ -132,7 +132,7 @@ class Home extends BaseController
     public function InsertDataPesan()
     {
         $currentTime = Time::now();
-        $formattedTime = $currentTime->format('ymd-Hi');
+        $formattedTime = $currentTime->format('ymd-His');
         $data = [
             'id_pesan' => "PSN-" . $formattedTime,
             'nama_pesan' => $this->request->getPost('nama_pesan'),

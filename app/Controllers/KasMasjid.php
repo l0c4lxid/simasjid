@@ -55,7 +55,7 @@ class KasMasjid extends BaseController
     public function InsertDataKas()
     {
         $currentTime = Time::now();
-        $formattedTime = $currentTime->format('ymd-Hi');
+        $formattedTime = $currentTime->format('ymd-His');
         $data = [
             'id_kas_masjid' => "KASM-" . $formattedTime,
             'ket' => $this->request->getPost('ket'),

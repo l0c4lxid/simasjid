@@ -27,7 +27,7 @@ class Agenda extends BaseController
     public function InsertData()
     {
         $currentTime = Time::now();
-        $formattedTime = $currentTime->format('ymd-Hi');
+        $formattedTime = $currentTime->format('ymd-His');
         $data = [
             'id_agenda' => "AGD-" . $formattedTime,
             'nama_kegiatan' => $this->request->getPost('nama_kegiatan'),
