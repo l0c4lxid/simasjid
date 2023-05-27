@@ -82,8 +82,9 @@
             <label for="bukti">Bukti</label>
             <div class="bukti">
               <div class="custom-file">
-                <input type="file" name="bukti" class="custom-file-input" id="bukti" required>
-                <label class="custom-file-label" for="bukti">Pilih Gambar</label>
+                <input type="file" name="bukti" class="custom-file-input" id="bukti" required
+                  onchange="displayFileName()">
+                <label class="custom-file-label" for="bukti" id="fileLabel">Pilih Gambar</label>
               </div>
             </div><br>
             <button type="submit" class="btn btn-success text-left">Kirim</button>
@@ -94,3 +95,11 @@
     </div>
   </div>
 </div>
+<script>
+  function displayFileName() {
+    var input = document.getElementById('bukti');
+    var label = document.getElementById('fileLabel');
+    var fileName = input.files[0].name;
+    label.textContent = fileName;
+  }
+</script>
