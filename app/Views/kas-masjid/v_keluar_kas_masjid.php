@@ -138,32 +138,33 @@
       <!-- /.modal-content -->
     </div>
   </div>
-<?php } ?>
-<div class="modal fade" id="modal-hapus<?= $value['id_kas_masjid'] ?>">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Hapus
-          <?= $judul ?>
-        </h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Apakah Ingin Hapus Data ?<br>
-        <b>
-          <?= $value['ket'] ?>
-        </b>
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-        <a href="<?= base_url('KasMasjid/HapusDataKasKeluar/' . $value['id_kas_masjid']) ?>"
-          class="btn btn-danger">Hapus</a>
-      </div>
-      <?php echo form_close() ?>
-    </div>
-    <!-- /.modal-content -->
-  </div>
 
-</div>
+  <div class="modal fade" id="modal-hapus<?= $value['id_kas_masjid'] ?>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Hapus
+            <?= $judul ?>
+          </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Apakah Ingin Hapus Data ?<br>
+          <b>
+            <?= $value['ket'] ?>
+          </b>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+          <a href="<?= base_url('KasMasjid/HapusDataKasKeluar/' . $value['id_kas_masjid']) ?>"
+            class="btn btn-danger">Hapus</a>
+        </div>
+        <?php echo form_close() ?>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+
+  </div>
+<?php } ?>

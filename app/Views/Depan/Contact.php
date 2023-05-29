@@ -24,7 +24,7 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
                         <?= $web['alamat'] ?>.<br>
                         +
                         <?= $web['wa_masjid'] ?><br>
-                        <? +$web['email'] ?>
+                        <?= $web['email'] ?>
                     </p>
                 </div>
             </div>

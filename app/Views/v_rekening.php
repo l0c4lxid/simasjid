@@ -89,7 +89,7 @@
         </div>
         <div class='form-group'>
           <label>No Rekening</label>
-          <input type='text' name="no_rekening" class="form-control" placeholder="123412341234"
+          <input type='text' name="no_rek" class="form-control" placeholder="123412341234"
             oninput="validateAccountNumber(this)" required>
         </div>
         <div class='form-group'>
