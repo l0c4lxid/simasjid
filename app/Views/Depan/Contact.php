@@ -23,7 +23,8 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
                     <p class="lead mb-5">
                         <?= $web['alamat'] ?>.<br>
                         +
-                        <?= $web['wa_masjid'] ?>
+                        <?= $web['wa_masjid'] ?><br>
+                        <? +$web['email'] ?>
                     </p>
                 </div>
             </div>

@@ -282,8 +282,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         All rights reserved.
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2023 <a href="<?= base_url() ?>"><?= $web['nama_masjid'] ?></a>.</strong>
-      <?= $web['alamat'] ?>
+      <strong>Copyright &copy; 2023 //
+        <?= $web['nama_masjid'] ?>.
+      </strong>
     </footer>
   </div>
 </body>
