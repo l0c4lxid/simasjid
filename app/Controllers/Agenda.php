@@ -33,6 +33,7 @@ class Agenda extends BaseController
             'nama_kegiatan' => $this->request->getPost('nama_kegiatan'),
             'tanggal' => $this->request->getPost('tanggal'),
             'jam' => $this->request->getPost('jam')
+
         ];
         $this->ModelAgenda->InsertData($data);
         session()->setFlashdata('pesan', 'Berhasil Disimpan !');
