@@ -1,8 +1,11 @@
 <?php
 if ($kas == null) {
-  $pemasukan[] = 0;
-  $pengeluaran[] = 0;
+  $pemasukan = [0];
+  $pengeluaran = [0];
+  $saldoakhir = 0;
 } else {
+  $pemasukan = [];
+  $pengeluaran = [];
   foreach ($kas as $key => $value) {
     $pemasukan[] = $value['kas_masuk'];
     $pengeluaran[] = $value['kas_keluar'];
