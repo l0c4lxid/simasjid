@@ -134,7 +134,7 @@ class Home extends BaseController
         $data = [
             'id_pesan' => "PSN-" . $formattedTime,
             'nama_pesan' => $this->request->getPost('nama_pesan'),
-            'wa_pesan' => $this->request->getPost('wa_pesan'),
+            'wa_pesan' => '+62' . $this->request->getPost('wa_pesan'),
             'judul_pesan' => $this->request->getPost('judul_pesan'),
             'isi_pesan' => $this->request->getPost('isi_pesan'),
             'tanggal_kirim' => date('Y-m-d H:i:s'),

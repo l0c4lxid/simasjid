@@ -37,9 +37,17 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
                 </div>
                 <div class="form-group">
                     <label>Nomor WhatsApp</label>
-                    <input type="number" id="email" name="wa_pesan" class="form-control" placeholder="089607765169"
-                        required />
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">+62</span>
+                        </div>
+                        <input type="text" id="wa_number" name="wa_pesan" class="form-control" placeholder="89607765169"
+                            pattern=".{10,}" title="Minimum 10 characters required" maxlength="12" required
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                    </div>
                 </div>
+
+
                 <div class="form-group">
                     <label>Subject</label>
                     <input type="text" id="judul" name="judul_pesan" class="form-control"

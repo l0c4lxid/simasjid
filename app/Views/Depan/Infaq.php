@@ -75,7 +75,8 @@
           </div>
           <div class='form-group'>
             <label>No Rekening</label>
-            <input type='number' name="no_rekening" class="form-control" placeholder="123412341234" required></input>
+            <input type='text' name="no_rekening" class="form-control" placeholder="123412341234"
+              oninput="validateAccountNumber(this)" required>
           </div>
           <div class='form-group'>
             <label>Atas Nama</label>
@@ -108,5 +109,18 @@
     var label = document.getElementById('fileLabel');
     var fileName = input.files[0].name;
     label.textContent = fileName;
+  }
+</script>
+<script>
+  function validateAccountNumber(input) {
+    // Menghapus semua karakter selain angka
+    var accountNumber = input.value.replace(/\D/g, '');
+
+    // Memastikan panjang angka dalam rentang 10-16 digit
+    if (accountNumber.length < 10 || accountNumber.length > 16) {
+      input.setCustomValidity("No Rekening harus terdiri dari 10 hingga 16 digit angka.");
+    } else {
+      input.setCustomValidity("");
+    }
   }
 </script>

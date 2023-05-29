@@ -91,7 +91,7 @@
         </div>
         <div class='form-group'>
           <label>Tanggal</label>
-          <input type='date' name="tanggal" class="form-control" required></input>
+          <input type='date' id="tanggal" name="tanggal" class="form-control" required></input>
         </div>
         <div class='form-group'>
           <label>Jam</label>
@@ -182,4 +182,14 @@
       });
     });
   });
+</script>
+<script>
+  // Mendapatkan elemen input tanggal
+  var tanggalInput = document.getElementById('tanggal');
+
+  // Mendapatkan tanggal sekarang
+  var tanggalSekarang = new Date().toISOString().split('T')[0];
+
+  // Menetapkan nilai minimal tanggal ke tanggal sekarang
+  tanggalInput.setAttribute('min', tanggalSekarang);
 </script>
