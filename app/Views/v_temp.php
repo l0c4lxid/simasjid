@@ -131,7 +131,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Default to the left -->
       <strong>Copyright &copy; 2023 <a href="#">
           <?= $web['nama_masjid'] ?>.</strong>
-      <?= $web['alamat'] ?>.
     </footer>
   </div>
   <!-- ./wrapper -->

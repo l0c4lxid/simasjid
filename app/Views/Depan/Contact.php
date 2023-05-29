@@ -14,21 +14,20 @@ $web = $db->table('tbl_pengaturan')->get()->getRowArray();
         }
         ?>
         <div class="card-body row">
-            <div class="col-5 text-center d-flex align-items-center justify-content-center">
-                <div class="">
-                    <h2><strong>
-                            <i class="fas fa-mosque fa-4x text-green"></i><br>
-                            Masjid
+            <div class="col-12 col-md-5 text-center">
+                <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                    <i class="fas fa-mosque fa-4x text-green"></i>
+                    <h2><strong>Masjid
                             <?= $web['nama_masjid'] ?>
                         </strong></h2>
                     <p class="lead mb-5">
-                        <?= $web['alamat'] ?><br>
+                        <?= $web['alamat'] ?>.<br>
                         +
                         <?= $web['wa_masjid'] ?>
                     </p>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-12 col-md-5">
                 <?php echo form_open("Home/InsertDataPesan") ?>
                 <div class="form-group">
                     <label>Name</label>
