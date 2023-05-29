@@ -99,7 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="<?= base_url('Admin') ?>" class="brand-link text-center">
         <i class="fas fa-mosque text-success fa-2x"></i>
-        <br><b>Masjid</b>
+        <br><b id="nama-masjid">
+          <?= $web['nama_masjid'] ?>
+        </b>
       </a>
 
 
@@ -326,3 +328,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.modal-content -->
   </div>
 </div>
+<script>
+  $(function () {
+    // Tambahkan kode berikut
+    $('[data-widget="pushmenu"]').click(function () {
+      $('#nama-masjid').toggleClass('d-none');
+    });
+
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
