@@ -334,15 +334,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
     $('[data-widget="pushmenu"]').click(function () {
       $('#nama-masjid').toggleClass('d-none');
     });
-
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
   });
 </script>
