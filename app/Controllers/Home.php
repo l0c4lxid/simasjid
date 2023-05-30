@@ -77,6 +77,8 @@ class Home extends BaseController
             'page' => 'Depan/InfaqMasuk',
             'donasi' => $this->ModelHome->Infaq(),
         ];
+        // var_dump($data);
+        // die;
         return view('v_temp', $data);
     }
     public function Infaq()

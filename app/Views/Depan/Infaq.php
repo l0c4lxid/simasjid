@@ -66,7 +66,7 @@
           </div>
           <div class='form-group'>
             <label>Nama Bank</label>
-            <select name="nama_rek" class="form-control" required onchange="setAccountNumber(this)">
+            <select name="nama_bank" class="form-control" required onchange="setAccountNumber(this)">
               <option value="">Pilih Bank</option>
               <option value="BRI">BRI</option>
               <option value="BCA">BCA</option>
