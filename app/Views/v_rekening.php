@@ -80,21 +80,23 @@
         <?php echo form_open('Rekening/InsertData') ?>
         <div class='form-group'>
           <label>Nama Bank</label>
-          <select name="nama_rek" class="form-control" required>
-            <option>BRI</option>
-            <option>BCA</option>
-            <option>BTN</option>
-            <option>Lainnya</option>
+          <select name="nama_rek" class="form-control" required onchange="setAccountNumber(this)">
+            <option value="">Pilih Bank</option>
+            <option value="BRI">BRI</option>
+            <option value="BCA">BCA</option>
+            <option value="BTN">BTN</option>
+            <option value="BSI">BSI</option>
+            <option value="Yang Lain">Yang Lain</option>
           </select>
         </div>
         <div class='form-group'>
           <label>No Rekening</label>
-          <input type='text' name="no_rek" class="form-control" placeholder="123412341234"
-            oninput="validateAccountNumber(this)" required>
+          <input type='text' name="no_rek" class="form-control" placeholder="123412341234" pattern="\d{10,16}"
+            title="Masukkan No Rekening Yang Valid" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         </div>
         <div class='form-group'>
           <label>Atas Nama</label>
-          <input type='char' name="atas_nama" class="form-control" required></input>
+          <input type='char' name="atas_nama" class="form-control" placeholder="Andhika" required></input>
         </div>
       </div>
       <div class="modal-footer justify-content-between">
@@ -177,11 +179,11 @@
 
   </div>
 <?php } ?>
-
+<!-- 
 <script>
   function validateAccountNumber(input) {
     // Menghapus semua karakter selain angka
-    var accountNumber = input.value.replace(/\D/g, '');
+    var accountNumber = input.value.replace(/[^0-9]/g, '');
 
     // Memastikan panjang angka dalam rentang 10-16 digit
     if (accountNumber.length < 10 || accountNumber.length > 16) {
@@ -189,5 +191,28 @@
     } else {
       input.setCustomValidity("");
     }
+  } -->
+</script>
+<script>
+  function setAccountNumber(select) {
+    const accountNumberInput = document.querySelector('input[name="no_rek"]');
+    const selectedBank = select.value;
+    let accountNumber = "";
+
+    if (selectedBank === "BRI") {
+      accountNumber = "002";
+    } else if (selectedBank === "BCA") {
+      accountNumber = "014";
+      // Add account number for BCA if desired
+    } else if (selectedBank === "BTN") {
+      accountNumber = "200";
+      // Add account number for BTN if desired
+    } else if (selectedBank === "BSI") {
+      accountNumber = "451";
+      // Add account number for BSI if desired
+    } else {
+      accountNumber = "";
+    }
+    accountNumberInput.value = accountNumber;
   }
 </script>
