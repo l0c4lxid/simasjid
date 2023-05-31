@@ -27,6 +27,8 @@ class Admin extends BaseController
             'submenu' => '',
             'page' => 'v_dashboard',
             'kas' => $this->ModelKasMasjid->AllData(),
+            "jumlah_masuk" => $this->ModelInfaq->hitung_infaq_masuk(),
+            "jumlah_keluar" => $this->ModelInfaq->hitung_infaq_keluar(),
         ];
         return view('v_temp_admin', $data);
     }

@@ -13,6 +13,21 @@ if ($kas == null) {
   $saldoakhir = array_sum($pemasukan) - array_sum($pengeluaran);
 }
 ?>
+<?php
+if ($jumlah_masuk == null) {
+  $jumlah_masuk[] = 0;
+} else {
+  $jumlah_masuk['jumlah'];
+}
+?>
+
+<?php
+if ($jumlah_keluar == null) {
+  $jumlah_keluar[] = 0;
+} else {
+  $jumlah_keluar['jumlah'];
+}
+?>
 <div class="col-12">
   <!-- small box -->
   <div class="small-box bg-primary">
@@ -20,8 +35,7 @@ if ($kas == null) {
       <h3>Rp.
         <?= number_format($saldoakhir, 0) ?>
       </h3>
-
-      <p>Uang Kas</p>
+      <p>Total Uang Kas</p>
     </div>
     <div class="icon">
       <i class="fas fa-money-bill-wave"></i>
@@ -63,6 +77,43 @@ if ($kas == null) {
       <i class="fas fa-upload"></i>
     </div>
     <a href="<?= base_url("KasMasjid/Keluar") ?>" class="small-box-footer">More info <i
+        class="fas fa-arrow-circle-right"></i></a>
+  </div>
+</div>
+<!-- ./col -->
+
+<div class="col-lg-6 col-12">
+  <!-- small box -->
+  <div class="small-box bg-secondary">
+    <div class="inner">
+      <h3>Rp.
+        <?= number_format(array_sum($jumlah_masuk), 0) ?>
+      </h3>
+
+      <p>Infaq Masuk</p>
+    </div>
+    <div class="icon">
+      <i class="fas fa-download"></i>
+    </div>
+    <a href="<?= base_url("Admin/InfaqMasuk") ?>" class="small-box-footer">More info <i
+        class="fas fa-arrow-circle-right"></i></a>
+  </div>
+</div>
+<!-- ./col -->
+<div class="col-lg-6 col-12">
+  <!-- small box -->
+  <div class="small-box bg-warning">
+    <div class="inner">
+      <h3>Rp.
+        <?= number_format(array_sum($jumlah_keluar), 0) ?>
+      </h3>
+
+      <p>Infaq Keluar</p>
+    </div>
+    <div class="icon">
+      <i class="fas fa-upload"></i>
+    </div>
+    <a href="<?= base_url("Admin/InfaqKeluar") ?>" class="small-box-footer">More info <i
         class="fas fa-arrow-circle-right"></i></a>
   </div>
 </div>
