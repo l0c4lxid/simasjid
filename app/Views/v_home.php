@@ -22,16 +22,13 @@ if ($kas == null) {
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="https://telegra.ph//file/5ec494406c094330134bc.jpg" width="520" height="420"
-          alt="First slide">
+        <img class="d-block w-100" src="https://i.imgur.com/9UMZpxI.jpeg" width="520" height="420" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://telegra.ph//file/df6317b42cbdc70263fd2.jpg" width="520" height="420"
-          alt="Second slide">
+        <img class="d-block w-100" src="https://i.imgur.com/6nVjYrF.jpg" width="520" height="420" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://telegra.ph//file/c412ad4c1b9fce485b59b.jpg" width="520" height="420"
-          alt="Third slide">
+        <img class="d-block w-100" src="https://i.imgur.com/cvTcsT1.jpg" width="520" height="420" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
