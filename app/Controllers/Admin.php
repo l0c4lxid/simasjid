@@ -7,6 +7,7 @@ use App\Models\ModelKasMasjid;
 use App\Models\ModelRekening;
 use App\Models\ModelInfaq;
 use App\Models\ModelPesan;
+use App\Models\ModelLogin;
 
 class Admin extends BaseController
 {
@@ -17,6 +18,8 @@ class Admin extends BaseController
         $this->ModelRekening = new ModelRekening;
         $this->ModelInfaq = new ModelInfaq;
         $this->ModelPesan = new ModelPesan;
+        $this->ModelLogin = new ModelLogin;
+
     }
     public function index()
     {
@@ -133,6 +136,45 @@ class Admin extends BaseController
         $this->ModelInfaq->UpdateData($data);
         session()->setFlashdata('pesan', 'Berhasil Diupdate !');
         return redirect()->to(base_url('Admin/Infaq'));
+    }
+    public function Akun()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->table('user')->get()->getRowArray();
+        if ($query) {
+            $email = $query['email'];
+            $password = $query['password'];
+        }
+
+        $data = [
+            'judul' => 'Edit Akun',
+            'subjudul' => '',
+            'menu' => 'Akun',
+            'submenu' => '',
+            'page' => 'v_akun',
+            'email' => $email,
+            'password' => $password
+        ];
+        return view('v_temp_admin', $data);
+    }
+    public function GantiAkun()
+    {
+        // Mengambil data email dan password dari form input
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $modelLogin = new \App\Models\ModelLogin();
+        $userData = [
+            'email' => $email,
+            'password' => $password
+        ];
+
+        // Menggunakan email sebagai kriteria pencarian
+        $modelLogin->where('email', $email)->set($userData)->update();
+        $modelLogin->where('password', $password)->set($userData)->update();
+        session()->setFlashdata('pesan', 'Berhasil Diupdate !');
+        // Redirect ke halaman admin setelah berhasil menyimpan
+        return redirect()->to('/admin/akun');
     }
 
 }

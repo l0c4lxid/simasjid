@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 192.168.0.100
--- Waktu pembuatan: 25 Bulan Mei 2023 pada 05.07
+-- Waktu pembuatan: 09 Jun 2023 pada 15.05
 -- Versi server: 8.0.30-22
 -- Versi PHP: 7.3.13
 
@@ -39,17 +39,24 @@ CREATE TABLE `tbl_agenda` (
 --
 
 INSERT INTO `tbl_agenda` (`id_agenda`, `nama_kegiatan`, `tanggal`, `jam`) VALUES
-('AGD-230524-1526', 'hkhbknkl', '2023-05-24', '15:25:00');
+('AGD-230529-102056', 'Baksos', '2023-05-31', '08:00:00'),
+('AGD-230529-113301', 'Pengajian Rutin', '2023-06-11', '07:00:00'),
+('AGD-230529-113411', 'Kerja Bakti', '2023-06-17', '07:30:00'),
+('AGD-230529-113611', 'TPA', '2023-05-30', '16:00:00'),
+('AGD-230529-113725', 'Pengajian Rutin', '2023-05-31', '13:00:00'),
+('AGD-230529-113800', 'TPA', '2023-06-13', '16:00:00'),
+('AGD-230529-113801', 'TPA', '2023-06-13', '16:00:00'),
+('AGD-230529-113900', 'Kerja Bakti', '2023-05-30', '07:30:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_donasi`
+-- Struktur dari tabel `tbl_infaq`
 --
 
-CREATE TABLE `tbl_donasi` (
-  `id_donasi` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `id_rek` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL,
+CREATE TABLE `tbl_infaq` (
+  `id_infaq` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `id_rek` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `nama_bank` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `no_rekening` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `an` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -60,11 +67,13 @@ CREATE TABLE `tbl_donasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_donasi`
+-- Dumping data untuk tabel `tbl_infaq`
 --
 
-INSERT INTO `tbl_donasi` (`id_donasi`, `id_rek`, `nama_bank`, `no_rekening`, `an`, `jumlah`, `bukti`, `status`, `tanggal`) VALUES
-('INF-230525-0856', 'RKN-2305250855', 'BRI', '1', 'a', 1, '1684979790_edd585248664a2275c85.png', 'Masuk', '2023-05-25 08:56:30');
+INSERT INTO `tbl_infaq` (`id_infaq`, `id_rek`, `nama_bank`, `no_rekening`, `an`, `jumlah`, `bukti`, `status`, `tanggal`) VALUES
+('INF-230529-121546', 'RKN-230529-120109', 'BTN', '43672989162547', 'avi', 20000000, '1685337346_b5eb4294e82bf6c0efcf.jpg', 'Masuk', '2023-05-29 12:15:46'),
+('INF-230529-121719', 'RKN-230529-120154', 'BCA', '665331889768', 'cici', 8000000, '1685337439_924f86b1c53f0647e692.jpg', 'Masuk', '2023-05-29 12:17:19'),
+('INF-230529-121851', 'RKN-230529-120109', 'BSI', '8888977632575', 'oca', 10000000, '1685337531_8ce15b003fe9b4996c2f.jpg', 'Keluar', '2023-05-29 12:18:51');
 
 -- --------------------------------------------------------
 
@@ -86,8 +95,13 @@ CREATE TABLE `tbl_kas_masjid` (
 --
 
 INSERT INTO `tbl_kas_masjid` (`id_kas_masjid`, `tanggal`, `ket`, `kas_masuk`, `kas_keluar`, `status`) VALUES
-('KASK-230524-1546', '2023-05-24', 'cxaca', 0, 1, 'keluar'),
-('KASM-230524-1546', '2023-05-24', 'sad', 1, 0, 'masuk');
+('KASK-230529-1153', '2023-05-30', 'keperluan masjid', 0, 300000, 'keluar'),
+('KASK-230529-1154', '2023-05-31', 'listrik', 0, 100000, 'keluar'),
+('KASK-230529-1155', '2023-05-31', 'pembayaran air', 0, 100000, 'keluar'),
+('KASK-230529-1156', '2023-05-30', 'keperluan kerja bakti', 0, 150000, 'keluar'),
+('KASM-230529-115005', '2023-05-30', 'Kas masuk', 200000, 0, 'masuk'),
+('KASM-230529-115152', '2023-05-31', 'kas masuk', 3000000, 0, 'masuk'),
+('KASM-230529-115232', '2023-05-29', 'kas masuk', 2000000, 0, 'masuk');
 
 -- --------------------------------------------------------
 
@@ -132,7 +146,7 @@ CREATE TABLE `tbl_pesan` (
 --
 
 INSERT INTO `tbl_pesan` (`id_pesan`, `nama_pesan`, `wa_pesan`, `judul_pesan`, `isi_pesan`, `tanggal_kirim`) VALUES
-('PSN-230524-1544', 'asda', '1213', 'asdasd', 'asdads', '2023-05-24 15:44:47');
+('PSN-230529-123036', 'Ruham', '+629876655466', 'Donasi sudah masuk', 'Terimakasih ya !', '2023-05-29 12:30:36');
 
 -- --------------------------------------------------------
 
@@ -141,7 +155,7 @@ INSERT INTO `tbl_pesan` (`id_pesan`, `nama_pesan`, `wa_pesan`, `judul_pesan`, `i
 --
 
 CREATE TABLE `tbl_rekening` (
-  `id_rek` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `id_rek` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama_rek` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `no_rek` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `atas_nama` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
@@ -152,7 +166,10 @@ CREATE TABLE `tbl_rekening` (
 --
 
 INSERT INTO `tbl_rekening` (`id_rek`, `nama_rek`, `no_rek`, `atas_nama`) VALUES
-('RKN-2305250855', 'BRI', '1', 'a');
+('RKN-230529-120013', 'BTN', '12324455660', 'Intan'),
+('RKN-230529-120109', 'BRI', '245637897097', 'Marsya'),
+('RKN-230529-120154', 'BRI', '5667756574489', 'Syaid'),
+('RKN-230529-120235', 'BCA', '87665656598988', 'Ruham');
 
 -- --------------------------------------------------------
 
@@ -170,7 +187,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `password`) VALUES
-('admin@admin.com', '1');
+('admin@admin.com', '@Ndmin123');
 
 --
 -- Indexes for dumped tables
@@ -183,10 +200,10 @@ ALTER TABLE `tbl_agenda`
   ADD PRIMARY KEY (`id_agenda`);
 
 --
--- Indeks untuk tabel `tbl_donasi`
+-- Indeks untuk tabel `tbl_infaq`
 --
-ALTER TABLE `tbl_donasi`
-  ADD PRIMARY KEY (`id_donasi`);
+ALTER TABLE `tbl_infaq`
+  ADD PRIMARY KEY (`id_infaq`);
 
 --
 -- Indeks untuk tabel `tbl_kas_masjid`

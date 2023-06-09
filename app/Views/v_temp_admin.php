@@ -229,7 +229,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 class="nav-link <?= $menu == 'pengaturan' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-cog"></i>
                 <p>
-                  Pengaturan
+                  Pengaturan Masjid
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Admin/Akun') ?>" class="nav-link <?= $menu == 'Akun' ? 'active' : '' ?>">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Pengaturan Akun
                 </p>
               </a>
             </li>
